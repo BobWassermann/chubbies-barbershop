@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:300');
 
 body {
   background: #9c6e21;
@@ -8,11 +8,12 @@ body {
   flex-flow: row wrap;
   margin: 0;
   padding: 0;
-  position: fixed;
+  position: relative;
   width: 100%;
   height: 100%;
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.4em;
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
 }
 
 .logo {
@@ -30,16 +31,73 @@ img {
 article {
   display: flex;
   flex-flow: row wrap;
-  padding: 0 30%;
-  width: 40%;
+  padding: 0 15%;
+  width: auto;
   min-width: 300px;
   flex-basis: 100%;
 }
 
 article .col {
-  flex: 1;
+  flex: 100% 1;
   min-width: 200px;
-  padding: 1em;
+  font-size: 1.9rem;
+  line-height: 1.4em;
+  padding: 1em 10%;
   box-sizing: border-box;
-  text-align: center;
+  text-align: left;
+}
+
+article .col.half {
+  flex: 50% 1;
+}
+
+article .col.right {
+  text-align: right;
+}
+
+article .col h4 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: #000;
+  color: #9c6e21;
+  display: inline-block;
+  padding: 0 0.5em;
+}
+
+article .col .content {
+  display: block;
+}
+
+article .col dl {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+article .col dl dt,
+article .col dl dd {
+  margin: 0.5em 0;
+  flex: 70% 1;
+}
+
+article .col dl dd {
+  text-align: right;
+  flex: 30% 1;
+}
+
+@media screen and (max-width: 1200px) {
+  article {
+    padding: 0 5%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  article .col.half {
+    flex: 100% 1;
+  }
+  article .col.right {
+    text-align: left;
+  }
 }
